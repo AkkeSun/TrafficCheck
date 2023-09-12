@@ -12,6 +12,33 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/*
+create table TBL_TRAFFIC_CHECK
+(
+    ID             int auto_increment
+        primary key,
+    SERVER         varchar(10) not null comment 'API 호출된 서버',
+    API_URL_ID     int         not null comment 'TBL_URL에 정의되어 있는 API ID',
+    SUCCESS_COUNT  int         not null comment 'API 성공 횟수',
+    FAIL_COUNT     int         not null comment 'API 실패 횟수',
+    SLOW_API_COUNT int         not null comment '1초 이상(기준은 변경될 수 있음) 걸리는 API들에 대한 횟수',
+    TOTAL_COUNT    int         not null comment 'API 총 호출 횟수',
+    REG_DT         date        not null,
+    REG_DATE       datetime    not null
+);
+
+create index TBL_TRAFFIC_CHECK_SERVICE_TYPE_API_URL_ID_REG_DT_index
+    on TBL_TRAFFIC_CHECK (API_URL_ID, REG_DT);
+
+create index TBL_TRAFFIC_CHECK_SERVICE_TYPE_REG_DT_index
+    on TBL_TRAFFIC_CHECK (REG_DT);
+
+create index TBL_TRAFFIC_CHECK_SERVICE_TYPE_SERVER_NO_API_URL_ID_REG_DT_index
+    on TBL_TRAFFIC_CHECK (SERVER, API_URL_ID, REG_DT);
+
+create index TBL_TRAFFIC_CHECK_SERVICE_TYPE_SERVER_NO_REG_DT_index
+    on TBL_TRAFFIC_CHECK (SERVER, REG_DT);
+ */
 @Getter
 @Entity
 @Builder
