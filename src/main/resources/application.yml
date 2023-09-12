@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://db.sewoomch.com:3306/dbsewoomch?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true
-    username: sewoomch
-    password: sunyang2ek+
+    username: ENC(ShdZigbYUELWeDvvtSi6aXafgl9HNEMV)
+    password: ENC(mqnPTyJdJloXOqte4GzizJ7Lo+f9v8lY)
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
